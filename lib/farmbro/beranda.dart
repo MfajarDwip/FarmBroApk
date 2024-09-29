@@ -17,7 +17,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
   // Daftar halaman untuk BottomNavigationBar
   final List<Widget> _pages = [
     HomeContent(), // Konten halaman Beranda
-    Text('Halaman Lampu'), // Halaman Lampu (sementara)
+    Text('Lampu'), // Halaman Lampu (sementara)
     ProfileScreen(), // Halaman Profil
   ];
 
