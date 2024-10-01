@@ -13,3 +13,4 @@ Color fontkelembapan = Color(0xFF274D59);
 Color fontgas = Color(0xFF3C995C);
 Color navbar = Color(0xFF99613C);
 Color buttonhapus = Color(0xFFC40C0C);
+
