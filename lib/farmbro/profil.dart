@@ -1,10 +1,11 @@
+import 'package:farmbroapk/farmbro/ubahPassword.dart';
 import 'package:farmbroapk/resource/color/mycolor.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-        final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -21,8 +22,7 @@ class ProfileScreen extends StatelessWidget {
                 height: screenSize.height * 0.20,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/coba.png'),
-                      fit: BoxFit.cover),
+                      image: AssetImage('assets/coba.png'), fit: BoxFit.cover),
                   color: navbar,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(20),
@@ -115,7 +115,12 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   onTap: () {
-                    // Aksi saat tombol ubah password ditekan
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => UbahPassword(),
+                      ),
+                    );
                   },
                 ),
               ],

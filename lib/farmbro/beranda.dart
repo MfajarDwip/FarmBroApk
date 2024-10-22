@@ -1,4 +1,5 @@
 import 'package:farmbroapk/farmbro/profil.dart';
+import 'package:farmbroapk/farmbro/lampu.dart';
 import 'package:farmbroapk/resource/WidgetSuhu.dart';
 import 'package:farmbroapk/resource/Widgetlembap.dart';
 import 'package:farmbroapk/resource/diagramWidget.dart';
@@ -17,7 +18,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
   // Daftar halaman untuk BottomNavigationBar
   final List<Widget> _pages = [
     HomeContent(), // Konten halaman Beranda
-    Text('Lampu'), // Halaman Lampu (sementara)
+    const Lampu(), // Halaman Lampu (sementara)
     ProfileScreen(), // Halaman Profil
   ];
 
