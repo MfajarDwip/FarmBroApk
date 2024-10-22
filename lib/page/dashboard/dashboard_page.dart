@@ -1,68 +1,8 @@
-import 'package:farmbroapk/screen/remote.dart';
 import 'package:farmbroapk/util/reusable/chart.dart';
 import 'package:farmbroapk/util/reusable/sensor_card_small.dart';
-import 'package:farmbroapk/screen/profile.dart';
 import 'package:farmbroapk/util/reusable/color.dart';
 import 'package:flutter/material.dart';
-import '../util/reusable/sensor_card.dart';
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-
-  int _currentIndex = 0;
-
-  final List<Widget> _pages = [
-    const DashboardPage(),
-    const RemotePage(),
-    const ProfilePage(),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_currentIndex],
-      // Bottom Navigation Bar
-      bottomNavigationBar: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(15),
-          topRight: Radius.circular(15),
-        ),
-        child: BottomNavigationBar(
-          backgroundColor: bottomnav,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white,
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          iconSize: 30,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Beranda',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.radio_button_on),
-              label: 'Lampu',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profil',
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+import '../../util/reusable/sensor_card.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -88,7 +28,7 @@ class DashboardPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
