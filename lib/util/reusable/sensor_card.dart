@@ -1,3 +1,4 @@
+import 'package:farmbroapk/page/dashboard/dashboard_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class SensorCard extends StatelessWidget {
@@ -18,48 +19,59 @@ class SensorCard extends StatelessWidget {
       elevation: 5,
       shadowColor: Colors.black.withOpacity(1),
       color: colorBackground,
-      child: Padding(
-        padding: const EdgeInsets.all(35.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      titleCard,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: colorFont,
-                          fontWeight: FontWeight.bold
+      child: InkWell(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DashboardDetail(nameDetail: titleCard)),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 35),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        titleCard,
+                        style: TextStyle(
+                            fontFamily: 'Roboto',
+                            fontSize: 18,
+                            color: colorFont,
+                            fontWeight: FontWeight.bold
+                        ),
                       ),
-                    ),
-                    Text(
-                      statusCard,
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: colorFont
+                      Text(
+                        statusCard,
+                        style: TextStyle(
+                            fontFamily: 'Roboto',
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300,
+                            color: colorFont
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Text(
-                  valueCard,
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: colorFont,
+                    ],
                   ),
-                ),
-              ],
-            ),
-          ],
+                  Text(
+                    valueCard,
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
+                      color: colorFont,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
+      )
     );
   }
 }

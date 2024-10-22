@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class SmallSensorCard extends StatelessWidget {
-
   final String titleCard;
   final String valueCard;
   final Color colorBackground;
@@ -23,12 +22,12 @@ class SmallSensorCard extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              left: 10,
+              left: 25,
               top: 10,
               child: Text(
                 titleCard,
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     color: colorTitleFont,
                     fontWeight: FontWeight.bold
                 ),

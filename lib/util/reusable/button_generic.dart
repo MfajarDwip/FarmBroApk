@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'dart:ffi';
 
-class ButtonGeneric extends StatelessWidget {
+import 'package:flutter/material.dart';
+
+class GenericButton extends StatelessWidget {
   final String text;
-  final String? getRoute; //untuk param navigasi screen
-  final VoidCallback? onPressed; //untuk param function
+  final VoidCallback onPressed; //untuk param function
   final Color colorButton;
 
-  const ButtonGeneric({super.key, required this.text, this.getRoute, required this.colorButton, this.onPressed});
+  const GenericButton({super.key, required this.text, required this.colorButton, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,7 @@ class ButtonGeneric extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        onPressed: () {
-          (getRoute!.isNotEmpty) ? Get.toNamed(getRoute!) : onPressed; //pilih salah satu dari getRoute atau onPressed
-        },
+        onPressed: onPressed,
         child: Text(
           text,
           style: const TextStyle(
