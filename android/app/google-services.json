@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "284529445489",
+    "project_id": "farmbro-b77f1",
+    "storage_bucket": "farmbro-b77f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284529445489:android:0f84d233e04fdb51c669d0",
+        "android_client_info": {
+          "package_name": "com.example.farmbroapk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2wYnVtRX-IA3oDtWa0gcddhXbL-AjlP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

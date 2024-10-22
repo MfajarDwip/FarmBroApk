@@ -1,39 +1,39 @@
-import 'package:farmbroapk/farmbro/ubahPassword.dart';
-import 'package:farmbroapk/resource/color/mycolor.dart';
+import 'package:farmbroapk/util/reusable/color.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Menggunakan Stack untuk menempatkan gambar profil di tengah, setengah di luar dan setengah di dalam
           Stack(
-            clipBehavior: Clip.none, // Agar gambar bisa keluar dari container
-            alignment: Alignment.center, // Memastikan gambar berada di tengah
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
             children: [
-              // Bagian background header
               Container(
                 width: screenSize.width,
                 height: screenSize.height * 0.20,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/coba.png'), fit: BoxFit.cover),
+                  image: const DecorationImage(
+                      image: AssetImage('assets/coba.png'),
+                      fit: BoxFit.cover
+                  ),
                   color: navbar,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20),
                   ),
                 ),
-                child: Align(
+                child: const Align(
                   alignment: Alignment.topCenter,
                   child: Padding(
                     padding:
-                        const EdgeInsets.only(top: 40.0), // Posisi dari atas
+                        EdgeInsets.only(top: 40.0),
                     child: Text(
                       'Profile',
                       style: TextStyle(
@@ -45,29 +45,28 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              Positioned(
-                bottom: -50, // Posisi gambar profil
+              const Positioned(
+                bottom: -50,
                 child: CircleAvatar(
                   radius: 60,
                   backgroundImage: AssetImage(
-                      'assets/cuy.png'), // Ganti dengan path foto profil
+                      'assets/cuy.png'
+                  )
                 ),
               ),
-
-              Positioned(
-                bottom: -120, // Sesuaikan posisi teks dari gambar profil
+              const Positioned(
+                bottom: -120,
                 child: Column(
                   children: [
                     Text(
-                      'Fadias Keyn', // Nama user
+                      'Fadias Keyn',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      'Owner', // Teks role/jabatan
+                      'Owner',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey,
@@ -79,14 +78,12 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
 
-          SizedBox(height: 160), // Jarak setelah foto profil
+          const SizedBox(height: 160),
 
-          // Bagian informasi profil
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                // Nomor telepon
                 ListTile(
                   leading: Icon(Icons.phone, color: Colors.brown),
                   title: Text('+6285859714058'),
@@ -106,7 +103,6 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 15),
-                // Tombol ubah password
                 ListTile(
                   leading: Icon(Icons.lock, color: Colors.brown),
                   title: Text('Ubah Password'),
@@ -115,27 +111,16 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => UbahPassword(),
-                      ),
-                    );
                   },
                 ),
               ],
             ),
           ),
-
-          Spacer(),
-
-          // Tombol keluar akun
-
+          const Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: ElevatedButton(
               onPressed: () {
-                // Aksi saat tombol keluar akun ditekan
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonhapus, // Warna tombol
@@ -144,12 +129,11 @@ class ProfileScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'KELUAR AKUN',
                   style: TextStyle(
                     color: Colors.white,
-                    // color: const Color.fromARGB(255, 233, 0, 0),
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -157,8 +141,7 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-
-          SizedBox(height: 20), // Jarak dari tombol keluar ke bottom
+          const SizedBox(height: 20),
         ],
       ),
     );
