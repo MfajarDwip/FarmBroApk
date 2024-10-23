@@ -1,17 +1,27 @@
 # FarmBro
-Aplikasi 
-
-## TODO list
-- [x] Integrasi dengan Firebase
-- [ ] Implementasi Firebase ke kodingan
-- [ ] Login Beneran
+Aplikasi yadda yadda yadda...
+## Progress
+### Login Page
+- [x] UI
+- [x] Validasi (Bloc)
+- [ ] Integrasi API / Firebase
+### Dashboard Page
+- [x] UI
 - [ ] Detail Dashboard
+- [ ] State Management 
+- [ ] Integrasi API / Firebase
+### Remote Page
+- [x] UI
+- [x] Validasi (Bloc)
+- [ ] Integrasi API /Firebase
+### Profile Page
+- [ ] UI
+- [ ] Edit data
 - [ ] Ubah Password
-- [ ] Tombol ON OFF bekerja
-- [ ] Popup keluar aplikasi dan akun
-- [ ] Notifikasi
-- [ ] Tambah dan ubah Font
-- [ ] Ubah data ke data beneran
+- [ ] State Management (Profile & Change Password)
+- [ ] Integrasi API / Firebase
+### Penunjang
+- [ ] Push Notification
 
 Tambahi lagi kalo ada yang kurang, kasih x klo udah selesai
 

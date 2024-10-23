@@ -3,6 +3,8 @@ part 'remote_event.dart';
 part 'remote_state.dart';
 
 class RemoteBloc extends Bloc<RemoteEvent, RemoteState> {
+  final Stopwatch _stopwatch = Stopwatch();
+
   RemoteBloc() : super(RemoteState(false)) {
     on<RemoteOnPressed>((event, emit) {
       emit(RemoteState(true));

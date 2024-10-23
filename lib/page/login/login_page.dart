@@ -1,4 +1,4 @@
-import 'package:farmbroapk/util/reusable/button_generic.dart';
+import 'package:farmbroapk/util/reusable/generic_button.dart';
 import 'package:farmbroapk/util/reusable/generic_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

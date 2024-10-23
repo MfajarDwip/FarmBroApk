@@ -21,10 +21,8 @@ class GenericTextFormField extends StatelessWidget {
     return TextFormField(
       onChanged: onChanged,
       obscureText: isTextObscure,
+      enableInteractiveSelection: false,
       decoration: InputDecoration(
-        errorStyle: const TextStyle(
-          color: Colors.black
-        ),
         hintText: hintText,
         hintStyle: TextStyle(
             color: Colors.black.withAlpha(75)

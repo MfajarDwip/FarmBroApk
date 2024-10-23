@@ -28,7 +28,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
       if (email.isNotEmpty && password.isNotEmpty) {
         emit(state.copyWith(isSubmitting: true));
-        await Future.delayed(const Duration(seconds: 1)); //anggap lagi send request
+        await Future.delayed(const Duration(seconds: 1));
+        // TODO: implement API Request
         if (state.email == 'hasan' && state.password == '12345'){
           emit(state.copyWith(
             isNotValid: false,

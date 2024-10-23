@@ -1,5 +1,7 @@
 import 'package:farmbroapk/page/login/login_page.dart';
-import 'package:farmbroapk/util/reusable/button_generic.dart';
+import 'package:farmbroapk/page/profile/change_password/change_password_bloc.dart';
+import 'package:farmbroapk/page/profile/change_password/change_password_page.dart';
+import 'package:farmbroapk/util/reusable/generic_button.dart';
 import 'package:farmbroapk/util/reusable/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -81,54 +83,67 @@ class ProfilePage extends StatelessWidget {
               ),
             ],
           ),
-
           const SizedBox(height: 160),
-
-          Column(
-            children: [
-              ListTile(
-                leading: const Icon(Icons.phone, color: Colors.brown),
-                title: const Text('+6285859714058'),
-                tileColor: Color(0xFFFDEFE3),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: Column(
+              children: [
+                ListTile(
+                  leading: const Icon(Icons.phone, color: Colors.brown),
+                  title: const Text('+6285859714058'),
+                  tileColor: Color(0xFFFDEFE3),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
-              ),
-              SizedBox(height: 15),
-              // Email
-              ListTile(
-                leading: Icon(Icons.email, color: Colors.brown),
-                title: Text('fadiaskeyn@gmail.com'),
-                tileColor: Color(0xFFFDEFE3),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                const SizedBox(height: 15),
+                ListTile(
+                  leading: Icon(Icons.email, color: Colors.brown),
+                  title: Text('fadiaskeyn@gmail.com'),
+                  tileColor: Color(0xFFFDEFE3),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
-              ),
-              SizedBox(height: 15),
-              ListTile(
-                leading: Icon(Icons.lock, color: Colors.brown),
-                title: Text('Ubah Password'),
-                tileColor: Color(0xFFFDEFE3),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                const SizedBox(height: 15),
+                ListTile(
+                  leading: Icon(Icons.lock, color: Colors.brown),
+                  title: Text('Ubah Password'),
+                  tileColor: Color(0xFFFDEFE3),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>
+                        BlocProvider(
+                          create: (context) => ChangePasswordBloc(),
+                          child: const ChangePasswordPage(),
+                        ),
+                      )
+                    );
+                  },
                 ),
-                onTap: () {
-                },
-              ),
-            ],
+                const SizedBox(height: 240),
+                GenericButton(
+                  text: 'KELUAR AKUN',
+                  colorButton: Colors.red,
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>
+                        BlocProvider(
+                          create: (context) => LoginBloc(),
+                          child: const LoginPage(),
+                        ),
+                      )
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
-          const Spacer(),
-          GenericButton(
-            text: 'KELUAR AKUN',
-            colorButton: Colors.red,
-            onPressed: (){
-              BlocProvider(
-                create: (context) => LoginBloc(),
-                child: const LoginPage(),
-              );
-            },
-          ),
-          const SizedBox(height: 20),
         ],
       ),
     );

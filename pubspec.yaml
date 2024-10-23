@@ -83,15 +83,56 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-   - family: Roboto
-     fonts:
-       - asset: fonts/Roboto/Roboto-Black.ttf
-       - asset: fonts/Roboto/Roboto-BlackItalic.ttf
-         style: italic
-       - asset: fonts/Roboto/Roboto-Bold.ttf
-         weight: 700
-       - asset: fonts/Roboto/Roboto-Light.ttf
-         weight: 300
-  #
-  # For details regarding fonts from package dependencies,
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto/Roboto-Regular.ttf
+        - asset: fonts/Roboto/Roboto-Bold.ttf
+          weight: 700
+        - asset: fonts/Roboto/Roboto-Italic.ttf
+          style: italic
+        - asset: fonts/Roboto/Roboto-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/Roboto/Roboto-Light.ttf
+          weight: 300
+        - asset: fonts/Roboto/Roboto-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: fonts/Roboto/Roboto-Medium.ttf
+          weight: 500
+        - asset: fonts/Roboto/Roboto-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: fonts/Roboto/Roboto-Thin.ttf
+          weight: 100
+        - asset: fonts/Roboto/Roboto-ThinItalic.ttf
+          weight: 100
+          style: italic
+
+    - family: RobotoCondensed
+      fonts:
+        - asset: fonts/Roboto-Condensed/RobotoCondensed-Regular.ttf
+        - asset: fonts/Roboto-Condensed/RobotoCondensed-Bold.ttf
+          weight: 700
+        - asset: fonts/Roboto-Condensed/RobotoCondensed-Italic.ttf
+          style: italic
+        - asset: fonts/Roboto-Condensed/RobotoCondensed-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/Roboto-Condensed/RobotoCondensed-Light.ttf
+          weight: 300
+        - asset: fonts/Roboto-Condensed/RobotoCondensed-LightItalic.ttf
+          weight: 300
+          style: italic
+
+    - family: RobotoSlab
+      fonts:
+        - asset: assets/fonts/RobotoSlab-Regular.ttf
+        - asset: assets/fonts/RobotoSlab-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/RobotoSlab-Light.ttf
+          weight: 300
+
+
+    # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

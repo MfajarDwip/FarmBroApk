@@ -41,7 +41,7 @@ class SensorCard extends StatelessWidget {
                         titleCard,
                         style: TextStyle(
                             fontFamily: 'Roboto',
-                            fontSize: 18,
+                            fontSize: 20,
                             color: colorFont,
                             fontWeight: FontWeight.bold
                         ),
@@ -50,7 +50,7 @@ class SensorCard extends StatelessWidget {
                         statusCard,
                         style: TextStyle(
                             fontFamily: 'Roboto',
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.w300,
                             color: colorFont
                         ),
@@ -60,8 +60,8 @@ class SensorCard extends StatelessWidget {
                   Text(
                     valueCard,
                     style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 48,
+                      fontFamily: 'RobotoCondensed',
+                      fontSize: 52,
                       fontWeight: FontWeight.bold,
                       color: colorFont,
                     ),

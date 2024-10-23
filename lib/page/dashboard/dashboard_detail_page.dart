@@ -24,10 +24,11 @@ class DashboardDetail extends StatelessWidget {
         title: Text(
           nameDetail,
           style: const TextStyle(
-            color: Colors.white,
+            fontFamily: 'Roboto',
+            fontSize: 24,
             fontWeight: FontWeight.normal,
-            fontSize: 24
-          ),
+            color: Colors.white
+        ),
         )
       ),
       body: const Placeholder(),

@@ -7,7 +7,13 @@ class SmallSensorCard extends StatelessWidget {
   final Color colorTitleFont;
   final Color colorValueFont;
 
-  const SmallSensorCard({super.key, required this.titleCard, required this.valueCard, required this.colorBackground, required this.colorTitleFont, required this.colorValueFont});
+  const SmallSensorCard({super.key,
+    required this.titleCard,
+    required this.valueCard,
+    required this.colorBackground,
+    required this.colorTitleFont,
+    required this.colorValueFont
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +33,9 @@ class SmallSensorCard extends StatelessWidget {
               child: Text(
                 titleCard,
                 style: TextStyle(
-                    fontSize: 18,
-                    color: colorTitleFont,
-                    fontWeight: FontWeight.bold
+                  fontSize: 20,
+                  color: colorTitleFont,
+                  fontWeight: FontWeight.bold
                 ),
               ),
             ),
@@ -39,9 +45,10 @@ class SmallSensorCard extends StatelessWidget {
                 child: Text(
                   valueCard,
                   style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                      color: colorValueFont),
+                    fontFamily: 'RobotoCondensed',
+                    fontSize: 52,
+                    fontWeight: FontWeight.bold,
+                    color: colorValueFont),
                 ),
               ),
             ),

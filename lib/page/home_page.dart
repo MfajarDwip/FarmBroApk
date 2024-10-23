@@ -12,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
@@ -31,8 +30,18 @@ class _HomePageState extends State<HomePage> {
           topRight: Radius.circular(15),
         ),
         child: BottomNavigationBar(
+          selectedLabelStyle: const TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Roboto',
+          ),
+          unselectedLabelStyle: const TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.normal,
+            fontFamily: 'Roboto',
+          ),
           backgroundColor: bottomnav,
-          selectedItemColor: Colors.white,
+          selectedItemColor: Colors.orange.shade50,
           unselectedItemColor: Colors.white,
           currentIndex: _currentIndex,
           onTap: (index) {

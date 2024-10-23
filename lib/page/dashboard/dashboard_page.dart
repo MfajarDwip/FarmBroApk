@@ -9,23 +9,40 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement state management
     final screenSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            width: screenSize.width,
-            height: screenSize.height * 0.24,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/logoayam.png'), fit: BoxFit.cover
+          Stack(
+            alignment: AlignmentDirectional.bottomCenter,
+            children: [
+              Container(
+                width: screenSize.width,
+                height: screenSize.height * 0.24,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/logoayam.png'), fit: BoxFit.cover
+                  ),
+                  color: Color(0xFFA16651),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                ),
               ),
-              color: Color(0xFFA16651),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
+              Padding(
+                padding: EdgeInsets.only(bottom: screenSize.width/15),
+                child: const Text(
+                  'Selamat Datang, Atmin',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Colors.white,
+                    fontSize: 20
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -69,17 +86,6 @@ class DashboardPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 10),
-                const Padding(
-                  padding: EdgeInsets.only(left: 5),
-                  child: Text(
-                    'Diagram Rata Rata',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black
-                    ),
-                  ),
-                ),
                 Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -87,7 +93,24 @@ class DashboardPage extends StatelessWidget {
                   elevation: 5,
                   shadowColor: Colors.black.withOpacity(1),
                   color: Colors.white,
-                  child: const LineChartSample2(), //masih placeholder
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 25, top: 10),
+                        child: Text(
+                          'Diagram Rata Rata',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 20,
+                              color: Colors.deepOrange,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                      LineChartSample2(),
+                    ],
+                  ), //masih placeholder
                 ),
                 const SizedBox(height: 20,)
               ],
