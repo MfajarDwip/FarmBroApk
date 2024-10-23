@@ -10,7 +10,7 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement state management
-    final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.sizeOf(context);
     return SingleChildScrollView(
       child: Column(
         children: [

@@ -57,7 +57,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 1.5,
+                      height: MediaQuery.sizeOf(context).height / 1.5,
                       child: Container(
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(

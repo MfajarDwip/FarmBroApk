@@ -8,7 +8,7 @@ class RemotePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final remoteBloc = context.read<RemoteBloc>();
-    final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.sizeOf(context);
     final boxSize = screenSize.width / 2;
 
     return BlocBuilder<RemoteBloc, RemoteState>(
