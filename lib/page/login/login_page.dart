@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:farmbroapk/util/reusable/generic_button.dart';
 import 'package:farmbroapk/util/reusable/generic_text_form_field.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../dashboard/dashboard_bloc.dart';
 import '../dashboard/dashboard_page.dart';
@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: BlocListener<LoginBloc, LoginState>(
         listener: (context, state) {
-          if (state.isSuccess) {
+          if (state.status == LoginStatus.success) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) =>
@@ -107,12 +107,12 @@ class LoginPage extends StatelessWidget {
                                 ),
                                 onChanged: (value) => loginBloc.add(GetPassword(value)),
                               ),
-                              if(state.isSubmitting)
+                              if(state.status == LoginStatus.submitting)
                                 const Padding(
                                   padding: EdgeInsets.symmetric(vertical: 30, horizontal: 60),
                                   child: LinearProgressIndicator(),
                                 ),
-                              if(!state.isSubmitting)
+                              if(!(state.status == LoginStatus.submitting))
                                 const SizedBox(height: 30),
                               GenericButton(
                                   text: 'MASUK',
@@ -120,12 +120,12 @@ class LoginPage extends StatelessWidget {
                                   onPressed: () => context.read<LoginBloc>()
                                       .add(LoginSubmitted())
                               ),
-                              if(state.isNotValid)
+                              if(state.status == LoginStatus.notValid)
                                 const Padding(
                                   padding: EdgeInsets.only(top: 10),
                                   child: Text("Harap isi email dan password anda"),
                                 ),
-                              if(state.isFailure)
+                              if(state.status == LoginStatus.failure)
                                 const Padding(
                                   padding: EdgeInsets.only(top: 10),
                                   child: Text("Email atau Password anda salah"),

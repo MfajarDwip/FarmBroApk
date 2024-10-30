@@ -1,16 +1,20 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 part 'remote_event.dart';
 part 'remote_state.dart';
 
 class RemoteBloc extends Bloc<RemoteEvent, RemoteState> {
-  final Stopwatch _stopwatch = Stopwatch();
 
-  RemoteBloc() : super(RemoteState(false)) {
+  RemoteBloc() : super(RemoteState()) {
     on<RemoteOnPressed>((event, emit) {
-      emit(RemoteState(true));
+      emit(state.copyWith(
+        condition: true
+      ));
     });
     on<RemoteOffPressed>((event, emit) {
-      emit(RemoteState(false));
+      emit(state.copyWith(
+        condition: false
+      ));
     });
   }
 }

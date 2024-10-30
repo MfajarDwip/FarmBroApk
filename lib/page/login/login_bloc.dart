@@ -1,9 +1,13 @@
+import 'package:farmbroapk/model/login_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 part 'login_event.dart';
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginState()) {
+
     on<GetEmail>((event, emit) {
       emit(state.copyWith(
         email: event.email,
@@ -27,28 +31,23 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       final password = state.password;
 
       if (email.isNotEmpty && password.isNotEmpty) {
-        emit(state.copyWith(isSubmitting: true));
-        await Future.delayed(const Duration(seconds: 1));
-        // TODO: implement API Request
-        if (state.email == 'hasan' && state.password == '12345'){
+        emit(state.copyWith(status: LoginStatus.submitting));
+        try{
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          dynamic response = await LoginRepository().getUserToken(email, password);
+          await prefs.setString('token', response['token']);
           emit(state.copyWith(
-            isNotValid: false,
-            isSubmitting: false,
-            isSuccess: true
+              status: LoginStatus.success
           ));
         }
-        else {
+        catch(e) {
           emit(state.copyWith(
-            isNotValid: false,
-            isSubmitting: false,
-            isFailure: true,
+              status: LoginStatus.failure
           ));
         }
       } else {
         emit(state.copyWith(
-          isNotValid: true,
-          isSubmitting: false,
-          isFailure: false,
+          status: LoginStatus.notValid
         ));
       }
     });

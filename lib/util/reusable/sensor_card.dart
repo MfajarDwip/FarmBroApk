@@ -8,7 +8,14 @@ class SensorCard extends StatelessWidget {
   final Color colorBackground;
   final Color colorFont;
 
-  const SensorCard({super.key, required this.titleCard, required this.statusCard, required this.valueCard, required this.colorBackground, required this.colorFont,});
+  const SensorCard({
+    super.key,
+    required this.titleCard,
+    required this.statusCard,
+    required this.valueCard,
+    required this.colorBackground,
+    required this.colorFont,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +30,9 @@ class SensorCard extends StatelessWidget {
         onTap: (){
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => DashboardDetail(nameDetail: titleCard)),
+            MaterialPageRoute(
+                builder: (context) => DashboardDetail(nameDetail: titleCard)
+            ),
           );
         },
         child: Padding(

@@ -16,12 +16,22 @@ class RemotePage extends StatelessWidget {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text(
+              'Lampu telah hidup selama:\n',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.normal,
+                fontFamily: 'Roboto',
+              ),
+            ),
+            const SizedBox(height: 15),
             SizedBox(
               width: boxSize,
               height: boxSize,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: (state.condition) ? Colors.green : Colors.grey,
+                  backgroundColor: (state.condition) ? Colors.green : Colors
+                      .grey,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -50,7 +60,8 @@ class RemotePage extends StatelessWidget {
               height: boxSize,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: (!state.condition) ? Colors.red : Colors.grey,
+                  backgroundColor: (!state.condition) ? Colors.red : Colors
+                      .grey,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

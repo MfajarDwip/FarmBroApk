@@ -4,7 +4,7 @@ Aplikasi yadda yadda yadda...
 ### Login Page
 - [x] UI
 - [x] Validasi (Bloc)
-- [ ] Integrasi API / Firebase
+- [x] Integrasi API / Firebase
 ### Dashboard Page
 - [x] UI
 - [ ] Detail Dashboard
@@ -22,6 +22,7 @@ Aplikasi yadda yadda yadda...
 - [ ] Integrasi API / Firebase
 ### Penunjang
 - [ ] Push Notification
+- [ ] Network State
 
 Tambahi lagi kalo ada yang kurang, kasih x klo udah selesai
 

@@ -13,6 +13,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -83,7 +84,7 @@ class ProfilePage extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 160),
+          SizedBox(height: screenSize.height / 6),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
@@ -106,6 +107,13 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 15),
+                const Divider(
+                  indent: 25,
+                  endIndent: 25,
+                  thickness: 1,
+                  color: Colors.black12,
+                ),
+                const SizedBox(height: 15),
                 ListTile(
                   leading: Icon(Icons.lock, color: Colors.brown),
                   title: Text('Ubah Password'),
@@ -125,7 +133,7 @@ class ProfilePage extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: 240),
+                SizedBox(height: screenSize.height / 4.5),
                 GenericButton(
                   text: 'KELUAR AKUN',
                   colorButton: Colors.red,

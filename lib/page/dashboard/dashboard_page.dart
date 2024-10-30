@@ -9,8 +9,8 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement state management
     final screenSize = MediaQuery.sizeOf(context);
+    // TODO: implement state management
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -36,7 +36,8 @@ class DashboardPage extends StatelessWidget {
                 child: const Text(
                   'Selamat Datang, Atmin',
                   style: TextStyle(
-                    fontFamily: 'Roboto',
+                    fontFamily: 'RobotoSlab',
+                    fontWeight: FontWeight.normal,
                     color: Colors.white,
                     fontSize: 20
                   ),

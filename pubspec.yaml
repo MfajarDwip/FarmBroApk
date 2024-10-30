@@ -31,10 +31,12 @@ dependencies:
   flutter:
     sdk: flutter
   change_app_package_name: ^1.4.0
+  meta: ^1.15.0
   shared_preferences: ^2.3.2
   flutter_bloc: ^8.1.6
   fl_chart: ^0.69.0
   http: ^1.2.2
+  mqtt_client: ^10.5.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -127,11 +129,13 @@ flutter:
 
     - family: RobotoSlab
       fonts:
-        - asset: assets/fonts/RobotoSlab-Regular.ttf
-        - asset: assets/fonts/RobotoSlab-Bold.ttf
+        - asset: fonts/Roboto-slab/RobotoSlab-Black.ttf
+        - asset: fonts/Roboto-slab/RobotoSlab-Bold.ttf
           weight: 700
-        - asset: assets/fonts/RobotoSlab-Light.ttf
+        - asset: fonts/Roboto-slab/RobotoSlab-Light.ttf
           weight: 300
+        - asset: fonts/Roboto-slab/RobotoSlab-SemiBold.ttf
+          weight: 500
 
 
     # For details regarding fonts from package dependencies,
