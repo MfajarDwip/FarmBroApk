@@ -10,7 +10,7 @@ Aplikasi yadda yadda yadda...
 - [ ] Detail Dashboard
 - [ ] State Management 
 - [ ] Integrasi API / Firebase
-### Remote Page
+### Notification Page
 - [x] UI
 - [x] Validasi (Bloc)
 - [ ] Integrasi API /Firebase
