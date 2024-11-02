@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class GenericTextFormField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
+  final TextInputType? textInputType;
   final String hintText;
   final Widget iconPrefix;
   final Widget? iconSuffix;
@@ -10,6 +11,7 @@ class GenericTextFormField extends StatelessWidget {
   const GenericTextFormField({
     super.key,
     required this.hintText,
+    this.textInputType,
     required this.iconPrefix,
     this.iconSuffix,
     required this.isTextObscure,
@@ -21,6 +23,7 @@ class GenericTextFormField extends StatelessWidget {
     return TextFormField(
       onChanged: onChanged,
       obscureText: isTextObscure,
+      keyboardType: textInputType,
       enableInteractiveSelection: false,
       decoration: InputDecoration(
         hintText: hintText,

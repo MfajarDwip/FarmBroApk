@@ -9,15 +9,19 @@ import 'base_service.dart';
 
 
 class RequestService extends BaseService {
+  final int timeoutDuration = 5;
 
   @override
   Future getResponse(String endPoint) async {
     dynamic responseJson;
     try {
-      final response = await http.get(Uri.parse(apiBaseUrl + endPoint));
+      final response = await http.get(Uri.parse(apiBaseUrl + endPoint)
+      ).timeout(Duration(seconds: timeoutDuration));
       responseJson = returnResponse(response);
     } on SocketException {
-      throw FetchDataException('No Internet Connection');
+      throw FetchDataException(toString());
+    } on TimeOutException {
+      throw TimeOutException('Internet tidak tersedia');
     }
     return responseJson;
   }
@@ -31,10 +35,12 @@ class RequestService extends BaseService {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(rawJSON)
-      );
+      ).timeout(Duration(seconds: timeoutDuration));
       responseJson = returnResponse(response);
     } on SocketException {
-      throw FetchDataException('No Internet Connection');
+      throw FetchDataException("Galat");
+    } on TimeOutException {
+      throw TimeOutException('Internet tidak tersedia');
     }
     return responseJson;
   }
@@ -45,15 +51,12 @@ class RequestService extends BaseService {
       case 200:
         dynamic responseJson = jsonDecode(response.body);
         return responseJson;
-      case 400:
-        throw BadRequestException(response.body.toString());
-      case 401:
-      case 403:
-        throw UnauthorisedException(response.body.toString());
-      case 500:
+      case >= 300 && <=399:
+        throw InvalidInputException("Isi email anda dengan benar");
+      case >= 500 && <=599:
+        throw ServerException("Galat server: ${response.statusCode}");
       default:
-        throw FetchDataException(
-            'Error occured while communication with server: ${response.statusCode}'
+        throw FetchDataException('error ${response.statusCode}'
         );
     }
   }

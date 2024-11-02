@@ -31,18 +31,31 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       final password = state.password;
 
       if (email.isNotEmpty && password.isNotEmpty) {
-        emit(state.copyWith(status: LoginStatus.submitting));
+        emit(state.copyWith(
+            status: LoginStatus.submitting
+          )
+        );
         try{
           SharedPreferences prefs = await SharedPreferences.getInstance();
           dynamic response = await LoginRepository().getUserToken(email, password);
-          await prefs.setString('token', response['token']);
-          emit(state.copyWith(
-              status: LoginStatus.success
-          ));
+          final token = response['token'];
+          if (token != null) {
+            await prefs.setString('token', token);
+            emit(state.copyWith(
+                status: LoginStatus.success,
+                message: ""
+            ));
+          } else {
+            emit(state.copyWith(
+                status: LoginStatus.failure,
+                message: "Email atau password anda salah"
+            ));
+          }
         }
         catch(e) {
           emit(state.copyWith(
-              status: LoginStatus.failure
+              status: LoginStatus.failure,
+              message: e.toString()
           ));
         }
       } else {

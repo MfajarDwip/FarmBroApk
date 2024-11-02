@@ -1,27 +1,26 @@
 class AppException implements Exception {
   final dynamic _message;
-  final dynamic _prefix;
 
-  AppException([this._message, this._prefix]);
+  AppException(this._message);
 
   @override
   String toString() {
-    return "$_prefix$_message";
+    return "$_message";
   }
 }
 
 class FetchDataException extends AppException {
-  FetchDataException([String? message]) : super(message, "Error During Communication: ");
+  FetchDataException(super.message);
 }
 
-class BadRequestException extends AppException {
-  BadRequestException([message]) : super(message, "Invalid Request: ");
+class TimeOutException extends AppException {
+  TimeOutException(super.message);
 }
 
-class UnauthorisedException extends AppException {
-  UnauthorisedException([message]) : super(message, "Unauthorised Request: ");
+class ServerException extends AppException {
+  ServerException(super.message);
 }
 
 class InvalidInputException extends AppException {
-  InvalidInputException([String? message]) : super(message, "Invalid Input: ");
+  InvalidInputException(super.message);
 }
