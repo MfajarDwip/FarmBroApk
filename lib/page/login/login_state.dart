@@ -16,11 +16,11 @@ class LoginState {
   final String message;
 
   LoginState({
-    this.email = '',
-    this.password = '',
-    this.isPasswordObscured = false,
-    this.status = LoginStatus.initial,
-    this.message = ''
+    required this.email,
+    required this.password,
+    required this.isPasswordObscured,
+    required this.status,
+    required this.message
   });
 
   LoginState copyWith({

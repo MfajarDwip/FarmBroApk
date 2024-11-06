@@ -1,6 +1,6 @@
 import 'package:farmbroapk/page/login/login_page.dart';
-import 'package:farmbroapk/page/profile/change_password/change_password_bloc.dart';
-import 'package:farmbroapk/page/profile/change_password/change_password_page.dart';
+import 'package:farmbroapk/page/change_password/change_password_bloc.dart';
+import 'package:farmbroapk/page/change_password/change_password_page.dart';
 import 'package:farmbroapk/util/reusable/generic_button.dart';
 import 'package:farmbroapk/util/reusable/color.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +92,6 @@ class ProfilePage extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.phone, color: Colors.brown),
                   title: const Text('+6285859714058'),
-                  tileColor: Color(0xFFFDEFE3),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -101,7 +100,6 @@ class ProfilePage extends StatelessWidget {
                 ListTile(
                   leading: Icon(Icons.email, color: Colors.brown),
                   title: Text('fadiaskeyn@gmail.com'),
-                  tileColor: Color(0xFFFDEFE3),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -115,9 +113,9 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 ListTile(
-                  leading: Icon(Icons.lock, color: Colors.brown),
-                  title: Text('Ubah Password'),
-                  tileColor: Color(0xFFFDEFE3),
+                  leading: const Icon(Icons.lock, color: Colors.brown),
+                  title: const Text('Edit Data'),
+                  tileColor: const Color(0xFFFDEFE3),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),

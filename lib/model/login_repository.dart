@@ -1,8 +1,7 @@
-import 'package:farmbroapk/model/service/base_service.dart';
 import 'package:farmbroapk/model/service/request_service.dart';
 
 class LoginRepository {
-  final BaseService _requestService = RequestService();
+  final RequestService _requestService = RequestService();
 
   Future<dynamic> getUserToken(String email, String password) async {
     dynamic response = await _requestService.postResponse(

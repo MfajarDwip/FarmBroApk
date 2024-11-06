@@ -1,12 +1,6 @@
 class AppException implements Exception {
-  final dynamic _message;
-
-  AppException(this._message);
-
-  @override
-  String toString() {
-    return "$_message";
-  }
+  final String message;
+  AppException(this.message);
 }
 
 class FetchDataException extends AppException {

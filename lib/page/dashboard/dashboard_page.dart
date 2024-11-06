@@ -10,7 +10,7 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
-    // TODO: implement state management
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -78,8 +78,8 @@ class DashboardPage extends StatelessWidget {
                     ),
                     const SizedBox(width: 10),
                     SmallSensorCard(
-                        titleCard: 'Ayam Mati',
-                        valueCard: '4',
+                        titleCard: 'Jumlah Ayam',
+                        valueCard: '250',
                         colorBackground: widgetayam,
                         colorTitleFont: Colors.red,
                         colorValueFont: Colors.red
@@ -100,7 +100,7 @@ class DashboardPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 25, top: 10),
                         child: Text(
-                          'Diagram Rata Rata',
+                          'Diagram suhu',
                           style: TextStyle(
                               fontFamily: 'Roboto',
                               fontSize: 20,

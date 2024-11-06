@@ -1,5 +1,7 @@
 abstract class BaseService{
-  final String apiBaseUrl = 'https://farmbro-mbkm.research-ai.my.id/api/';
+  static const String apiBaseUrl = 'https://farmbro-mbkm.research-ai.my.id/api/';
+  static const int timeoutDuration = 5;
+  dynamic responseJson;
 
   Future<dynamic> getResponse(String endPoint);
 

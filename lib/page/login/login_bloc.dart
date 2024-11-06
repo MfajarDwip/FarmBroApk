@@ -6,8 +6,14 @@ part 'login_event.dart';
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc() : super(LoginState()) {
-
+  LoginBloc() : super(LoginState(
+    email: '',
+    password: '',
+    isPasswordObscured: false,
+    status: LoginStatus.initial,
+    message: ''
+  ))
+  {
     on<GetEmail>((event, emit) {
       emit(state.copyWith(
         email: event.email,
